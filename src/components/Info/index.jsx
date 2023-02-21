@@ -9,7 +9,7 @@ import s from './stylesheet';
 const Info = () => {
     return(
         <View style={s.container}>
-            <Text>Info</Text>
+            <Text>QR</Text>
         </View>
     )
 }

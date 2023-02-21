@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Image, Text } from 'react-native';
+import { View, Image, TouchableOpacity } from 'react-native';
 
 //utilities
 import palette from '../../utilities/colors';
@@ -18,7 +18,7 @@ const Navigate = () => {
     return (
         <Tab.Navigator {...{screenOptions}}>
             <Tab.Screen name='Home' component={Home} options={{
-                tabBarIcon: ({focused}) => (
+                tabBarIcon: ({focused}) => (  
                     <View style={{
                         alignItems: 'center',
                         justifyContent: 'center',

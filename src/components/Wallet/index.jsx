@@ -9,7 +9,7 @@ import s from './stylesheet';
 const Wallet = () => {
     return(
         <View style={s.container}>
-            <Text>Wallet</Text>
+            <Text>Config</Text>
         </View>
     )
 }

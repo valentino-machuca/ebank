@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Appsado",
-    "slug": "Appsado",
+    "name": "ebank",
+    "slug": "ebank",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -24,10 +24,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.valemachucaa.ebank"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "6e22a9d6-04d6-43e1-bd49-01dcfa1450b4"
+      }
     }
   }
 }

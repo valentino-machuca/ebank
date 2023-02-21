@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
 });
 
 const screenOptions = {
+  headerShown: false,
   tabBarShowLabel: false,
   tabBarStyle: {
     position: 'absolute',

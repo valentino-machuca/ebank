@@ -1,4 +1,5 @@
 import React from 'react';
+import { SafeAreaView, StatusBar } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 
 import Navigate from '../Navigation';
@@ -7,9 +8,11 @@ import Navigate from '../Navigation';
 const Main = () => {
 
     return (
-        <NavigationContainer>
-            <Navigate/>
-        </NavigationContainer>
+        <SafeAreaView style={{ flex: 1, marginTop: StatusBar.currentHeight}}>  
+            <NavigationContainer>
+                <Navigate/>
+            </NavigationContainer>
+        </SafeAreaView>
     )
 }
 
