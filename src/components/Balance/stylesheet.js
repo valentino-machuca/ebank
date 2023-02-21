@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     lineContainer: {
         justifyContent: 'center',
         alignItems: 'flex-start',
-        height: '100%',
+        height: 160,
         width: '40%',
     },
     line: {
