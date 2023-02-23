@@ -11,7 +11,8 @@ import { useFonts } from 'expo-font';
 import palette from '../../utilities/colors';
 
 
-const Info = () => {
+const Config = () => {
+
     const [fontsLoaded] = useFonts({
         Poppins: require("../../../assets/fonts/Poppins-Regular.ttf"),
         PoppinsSemiBold: require("../../../assets/fonts/Poppins-SemiBold.ttf"),
@@ -31,10 +32,10 @@ const Info = () => {
                         fontFamily: 'PoppinsLight',
                         padding: 8,
                     }}
-                >Compartir QR</Text>
+                >Configuración</Text>
             </TouchableOpacity>
         </View>
     )
 }
 
-export default Info;
+export default Config;

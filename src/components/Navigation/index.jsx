@@ -9,7 +9,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 //screens
 import Home from '../Home';
 import Info from '../Info';
-import Wallet from '../Wallet';
+import Config from '../Config';
 
 const Tab = createBottomTabNavigator();
 
@@ -61,7 +61,7 @@ const Navigate = () => {
                     </View>
                 )
             }}/>
-            <Tab.Screen name='Wallet' component={Wallet} options={{
+            <Tab.Screen name='Config' component={Config} options={{
                 tabBarIcon: ({focused}) => (
                     <View style={{
                         alignItems: 'center',

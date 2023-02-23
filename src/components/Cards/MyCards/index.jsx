@@ -53,7 +53,7 @@ const MyCards = () => {
                             fontSize: 20,
                             fontFamily: 'PoppinsLight',
                             marginTop: 15,
-                            marginLeft: 10,
+                            marginLeft: 30,
                             color: palette.dark
                         }}
                     >5423 XXXX XXXX 4111</Text>
@@ -76,7 +76,7 @@ const MyCards = () => {
                             fontSize: 20,
                             fontFamily: 'PoppinsLight',
                             marginTop: 15,
-                            marginLeft: 10,
+                            marginLeft: 30,
                             color: palette.dark
                         }}
                     >8583 XXXX XXXX 0412</Text>
@@ -99,12 +99,13 @@ const MyCards = () => {
                             fontSize: 20,
                             fontFamily: 'PoppinsLight',
                             marginTop: 15,
-                            marginLeft: 10,
+                            marginLeft: 30,
                             color: palette.secondary
                         }}
                     >4113 XXXX XXXX 4300</Text>
                 </TouchableOpacity>
                 <View style={s.tapa}></View>
+                <View style={s.borde}></View>
             </View>
         </View>
     )
