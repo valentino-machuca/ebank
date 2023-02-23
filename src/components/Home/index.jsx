@@ -10,6 +10,8 @@ import s from './stylesheet';
 import Header from '../Header';
 import Balance from '../Balance';
 import LastTransactions from '../LastTransactions';
+import Options from '../Options';
+import Cards from '../Cards';
 
 
 const Home = () => {
@@ -18,7 +20,9 @@ const Home = () => {
         <ScrollView style={s.container}>
             <Header/>
             <Balance/>
+            <Options/>
             <LastTransactions/>
+            <Cards/>
         </ScrollView>
     )
 }
