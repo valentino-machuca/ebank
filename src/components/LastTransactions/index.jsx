@@ -4,6 +4,7 @@ import s from './stylesheet';
 //assets
 import { useFonts } from 'expo-font';
 import palette from '../../utilities/colors';
+import { useTranslation } from 'react-i18next';
 
 //native
 import {
@@ -17,28 +18,28 @@ import Movement from './Movement';
 const items = [
     {
         name: 'Nike',
-        reason: 'Compras',
+        reason: 'movements.shopping',
         image: 1,
         entrance: false,
         amount: "16.000'00"
     },
     {
         name: 'Lucas Luquini',
-        reason: 'Transferencia recibida',
+        reason: 'movements.transferReceived',
         image: 2,
         entrance: true,
         amount: "5.000'00"
     },
     {
         name: 'Luna Salva',
-        reason: 'Transferencia enviada',
+        reason: 'movements.transferSent',
         image: 3,
         entrance: false,
         amount: "1.000'40"
     },
     {
         name: 'Soledad Pesto',
-        reason: 'Transferencia enviada',
+        reason: 'movements.transferSent',
         image: 4,
         entrance: false,
         amount: "1.320'50"
@@ -48,49 +49,49 @@ const items = [
 const items2 = [
     {
         name: 'Nike',
-        reason: 'Compras',
+        reason: 'movements.shopping',
         image: 1,
         entrance: false,
         amount: "16.000'00"
     },
     {
         name: 'Lucas Luquini',
-        reason: 'Transferencia recibida',
+        reason: 'movements.transferReceived',
         image: 2,
         entrance: true,
         amount: "5.000'00"
     },
     {
         name: 'Luna Salva',
-        reason: 'Transferencia enviada',
+        reason: 'movements.transferSent',
         image: 3,
         entrance: false,
         amount: "1.000'40"
     },
     {
         name: 'Soledad Pesto',
-        reason: 'Transferencia enviada',
+        reason: 'movements.transferSent',
         image: 4,
         entrance: false,
         amount: "1.320'50"
     },
     {
         name: "McDonald's",
-        reason: 'Delivery',
+        reason: 'movements.delivery',
         image: 5,
         entrance: false,
         amount: "2.340'00"
     },
     {
         name: 'Tú',
-        reason: 'Carga por CBU',
+        reason: 'movements.cbuFunds',
         image: 6,
         entrance: true,
         amount: "13.000'00"
     },
     {
         name: 'Soledad Pesto',
-        reason: 'Transferencia enviada',
+        reason: 'movements.transferReceived',
         image: 4,
         entrance: true,
         amount: "1.000'50"
@@ -98,6 +99,7 @@ const items2 = [
 ]
 
 const LastTransactions = () => {
+    const { t } = useTranslation("global");
 
     const [more, setMore] = useState(false);
 
@@ -123,7 +125,7 @@ const LastTransactions = () => {
                 fontFamily: 'PoppinsLight',
                 color: palette.dark,
                 }}
-                >Últimos movimientos</Text>
+                >{t('lastTransactions.title')}</Text>
             </View>
 
             <View style={s.items}>
@@ -144,13 +146,13 @@ const LastTransactions = () => {
                 style={{
                 width: '100%',
                 fontSize: 18,
-                marginTop: 10,
+                marginTop: 20,
                 fontFamily: 'PoppinsLight',
                 color: palette.dark,
                 textAlign: 'center',
                 opacity: 0.6
                 }}
-                >{more ? 'Ver Menos' : 'Ver más'}</Text>
+                >{more ? t('lastTransactions.less') : t('lastTransactions.more')}</Text>
                 </TouchableOpacity>
             </View>
         </View>

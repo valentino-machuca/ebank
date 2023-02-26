@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import s from './stylesheet'
 
 //asstes
 import palette from '../../utilities/colors';
 import { useFonts } from 'expo-font';
+import { useTranslation } from 'react-i18next';
 
 //native
 import {
@@ -12,8 +13,13 @@ import {
     Text,
     TouchableOpacity
 } from 'react-native';
+import ModalNotifications from './Modal';
+
 
 const Header = ({navigation}) => {
+    const [openNot, setOpenNot] = useState(false);
+
+    const { t } = useTranslation("global");
 
     const [fontsLoaded] = useFonts({
         Poppins: require("../../../assets/fonts/Poppins-Medium.ttf"),
@@ -24,6 +30,7 @@ const Header = ({navigation}) => {
 
     return (
         <View style={s.container}>
+            <ModalNotifications openModal={openNot} setOpenModal={setOpenNot} />
             <View style={s.avatar}>
                 <TouchableOpacity onPress={() => navigation.navigate('User')}>
                     <Image 
@@ -48,10 +55,10 @@ const Header = ({navigation}) => {
                         backgroundColor: palette.secondary,
                         borderRadius: 5
                     }}
-                >Hola, Valentino</Text>
+                >{`${t('header.hello')}, Valentino`}</Text>
             </View>
             <View style={s.notifications}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => setOpenNot(true)}>
                     <Image 
                         source={require('../../../assets/header/envelope.png')}
                         resizeMode='cover'

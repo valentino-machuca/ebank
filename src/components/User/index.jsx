@@ -1,17 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import s from './stylesheet'
 
 //asstes
 import palette from '../../utilities/colors';
 import { useFonts } from 'expo-font';
+import { useTranslation } from 'react-i18next';
 import Icon from 'react-native-vector-icons/Ionicons';
+import ModalLanguage from './Modal';
 
 //native
 import {
     View,
     Image,
     Text,
-    TouchableOpacity
+    TouchableOpacity,
+    Modal,
+    Pressable
 } from 'react-native';
 
 const user = {
@@ -25,27 +29,35 @@ const user = {
 const menuItems = [
     {
         icon: 'information-circle-outline',
-        text: 'Información Bancaria'
+        text: 'profile.bankInfo'
     },
     {
         icon: 'call-outline',
-        text: 'Soporte'
+        text: 'profile.support'
     },
     {
         icon: 'shield-outline',
-        text: 'Política de privacidad'
+        text: 'profile.privacyPolicy'
     },
     {
         icon: 'document-text-outline',
-        text: 'Términos y condiciones'
+        text: 'profile.terms'
+    },
+    {
+        icon: 'language-outline',
+        text: 'profile.language',
+        openModal: true,
     },
     {
         icon: 'log-out-outline',
-        text: 'Cerrar sesión'
+        text: 'profile.logout'
     },
 ]
 
 const User = ({navigation}) => {
+    const [openModal, setOpenModal] = useState(false); 
+
+    const { t } = useTranslation('global');
 
     const [fontsLoaded] = useFonts({
         Poppins: require("../../../assets/fonts/Poppins-Medium.ttf"),
@@ -56,6 +68,7 @@ const User = ({navigation}) => {
 
     return (
         <View style={s.container}>
+            { openModal ? <ModalLanguage openModal={openModal} setOpenModal={setOpenModal}/> : null}
             <View style={{
                 display: 'flex',
                 flexDirection: 'row',
@@ -80,7 +93,7 @@ const User = ({navigation}) => {
                         fontSize: 22,
                         fontFamily: 'PoppinsLight'
                     }}
-                >Mi perfil</Text>
+                >{t('profile.title')}</Text>
                 <TouchableOpacity
                     style={{
                         width: '15%',
@@ -96,8 +109,8 @@ const User = ({navigation}) => {
                     source={require('../../../assets/header/avatar.jpg')}
                     resizeMode='cover'
                     style={{
-                        width: 150,
-                        height: 150,
+                        width: 125,
+                        height: 125,
                         borderColor: 'rgba(255, 255, 255, 0.3)',
                         borderWidth: 8,
                         borderRadius: 100,
@@ -105,7 +118,7 @@ const User = ({navigation}) => {
                 />
                 <Text
                     style={{
-                        marginTop: 20,
+                        marginTop: 10,
                         fontSize: 24,
                         fontFamily: "Poppins",
                         color: palette.dark,
@@ -133,13 +146,14 @@ const User = ({navigation}) => {
                     menuItems.map((op, i) => (
                         <TouchableOpacity
                             style={{
-                                width: '58%',
+                                width: '80%',
                                 display: 'flex',
                                 flexDirection: 'row',
                                 justifyContent: 'flex-start',
                                 alignItems: "center",
                                 marginTop: 20
                             }}
+                            onPress={op.openModal ? () => setOpenModal(true) : null}
                             key={i}
                         >
                             <Icon name={op.icon} size={25} color={palette.dark}/>
@@ -150,7 +164,7 @@ const User = ({navigation}) => {
                                     marginLeft: 10,
         
                                 }}
-                            >{op.text}</Text>
+                            >{t(op.text)}</Text>
                         </TouchableOpacity>
                     ))
                 }

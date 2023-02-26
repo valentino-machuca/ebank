@@ -5,6 +5,7 @@ import s from './stylesheet'
 //assets
 import { useFonts } from 'expo-font';
 import palette from '../../utilities/colors';
+import { useTranslation } from 'react-i18next';
 
 //native
 import { 
@@ -15,6 +16,7 @@ import {
 
 
 const Balance = () => {
+    const { t } = useTranslation("global");
 
     const [fontsLoaded] = useFonts({
         Poppins: require("../../../assets/fonts/Poppins-Regular.ttf"),
@@ -41,7 +43,7 @@ const Balance = () => {
                             color: palette.dark,
                             opacity: 0.4
                         }}
-                        >Balance</Text>
+                        >{t('balance.balance')}</Text>
                         <TouchableOpacity>
                         <View style={s.balance.cash}>
                             <Text
@@ -85,7 +87,7 @@ const Balance = () => {
                             fontFamily: 'PoppinsLight',
                             color: palette.dark,
                         }}
-                        >Añadir Fondos</Text>
+                        >{t('balance.addFunds')}</Text>
                     </TouchableOpacity>
                 </View>
             </View>

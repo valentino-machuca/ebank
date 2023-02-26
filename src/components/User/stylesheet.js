@@ -14,11 +14,10 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         width: '100%',
-        height: 300,
-        marginTop: 20,
+        marginTop: 30,
     },
     menu: {
-        marginTop: '5%',
+        marginTop: 30,
         alignItems: 'center',
         justifyContent: 'center',
         width: '100%',

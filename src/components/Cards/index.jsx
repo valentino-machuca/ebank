@@ -4,6 +4,7 @@ import s from './stylesheet';
 //assets
 import { useFonts } from 'expo-font';
 import palette from '../../utilities/colors';
+import { useTranslation } from 'react-i18next';
 
 //native
 import {
@@ -16,6 +17,8 @@ import MyCards from './MyCards';
 
 const Cards = () => {
 
+    const { t } = useTranslation('global');
+    
     const [fontsLoaded] = useFonts({
         Poppins: require("../../../assets/fonts/Poppins-Regular.ttf"),
         PoppinsSemiBold: require("../../../assets/fonts/Poppins-SemiBold.ttf"),
@@ -43,7 +46,7 @@ const Cards = () => {
                 fontFamily: 'PoppinsLight',
                 color: palette.dark,
                 }}
-                >Tarjetas</Text>
+                >{t('cards.title')}</Text>
                 <TouchableOpacity
                     style={{
                         padding: 5,
