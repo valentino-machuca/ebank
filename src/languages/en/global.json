@@ -1,0 +1,36 @@
+{
+    "header": {
+        "hello": "Hello",
+        "notifications": "Notifications"
+    },
+    "balance": {
+        "balance": "Balance",
+        "addFunds": "Add funds"
+    },
+    "lastTransactions": {
+        "title": "Last Transactions",
+        "less": "Show less",
+        "more": "Show more"
+    },
+    "movements": {
+        "shopping": "Shopping",
+        "transferSent": "Transfer Sent",
+        "transferReceived": "Transfer Received",
+        "delivery": "Delivery",
+        "cbuFunds": "Add funds (Transfer)"
+    },
+    "cards": {
+        "title": "Wallet"
+    },
+    "profile": {
+        "title": "Profile",
+        "bankInfo": "Bank information",
+        "support": "Contact us",
+        "privacyPolicy": "Privacy Policy",
+        "terms": "Terms and conditions",
+        "language": "Language",
+        "logout": "Logout",
+        "es": "Spanish",
+        "en": "English"
+    }
+}

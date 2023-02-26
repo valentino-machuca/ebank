@@ -4,6 +4,7 @@ import s from './stylesheet.js';
 //assets
 import { useFonts } from 'expo-font';
 import palette from '../../../utilities/colors';
+import { useTranslation } from 'react-i18next';
 
 //native
 import {
@@ -31,6 +32,8 @@ const images = [
 ];
 
 const Movement = ({item, i}) => {
+    const { t } = useTranslation('global');
+
     const opacityProgress = useRef(new Animated.Value(0)).current;
     const movementX = useRef(new Animated.Value(100)).current;
 
@@ -92,7 +95,7 @@ const Movement = ({item, i}) => {
                             fontFamily: 'PoppinsLight',
                             color: palette.dark,
                             opacity: 0.7
-                        }}>{item.reason}</Text>
+                        }}>{t(item.reason)}</Text>
                     </View>
                 </View>
                 <View style={{
