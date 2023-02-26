@@ -13,6 +13,8 @@ import {
     Image
 } from 'react-native';
 
+import Icon from 'react-native-vector-icons/Ionicons';
+
 const Options = () => {
 
     const [fontsLoaded] = useFonts({
@@ -26,61 +28,33 @@ const Options = () => {
     return (
         <View style={s.container}>
             <TouchableOpacity style={s.option}>
-                <Image 
-                    source={require('../../../assets/options/plus.png')}
-                    resizeMode='cover'
+                <Icon name="add-sharp" size={28} color={palette.dark}/>
+            </TouchableOpacity>
+            <TouchableOpacity style={s.option}>
+                <Icon 
+                    name='arrow-back'
+                    size={28}
+                    color={palette.dark}
                     style={{
-                        width: 25,
-                        height: 25,
-                        tintColor: palette.dark
+                        transform: [{rotate: '-45deg'}]
                     }}
                 />
             </TouchableOpacity>
             <TouchableOpacity style={s.option}>
-                <Image 
-                    source={require('../../../assets/options/arrow.png')}
-                    resizeMode='cover'
+                <Icon 
+                    name='arrow-back'
+                    size={28}
+                    color={palette.dark}
                     style={{
-                        width: 25,
-                        height: 25,
-                        tintColor: palette.dark,
-                        transform: [{rotate: '-135deg'}]
+                        transform: [{rotate: '135deg'}]
                     }}
                 />
             </TouchableOpacity>
             <TouchableOpacity style={s.option}>
-                <Image 
-                    source={require('../../../assets/options/arrow.png')}
-                    resizeMode='cover'
-                    style={{
-                        width: 25,
-                        height: 25,
-                        tintColor: palette.dark,
-                        transform: [{rotate: '45deg'}]
-                    }}
-                />
+                <Icon name="repeat" size={28} color={palette.dark}/>
             </TouchableOpacity>
             <TouchableOpacity style={s.option}>
-                <Image 
-                    source={require('../../../assets/options/transfer.png')}
-                    resizeMode='cover'
-                    style={{
-                        width: 25,
-                        height: 25,
-                        tintColor: palette.dark
-                    }}
-                />
-            </TouchableOpacity>
-            <TouchableOpacity style={s.option}>
-                <Image 
-                    source={require('../../../assets/options/history.png')}
-                    resizeMode='cover'
-                    style={{
-                        width: 25,
-                        height: 25,
-                        tintColor: palette.dark
-                    }}
-                />
+                <Icon name="list" size={28} color={palette.dark}/>
             </TouchableOpacity>
             <TouchableOpacity>
                 <Text

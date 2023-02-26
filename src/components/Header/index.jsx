@@ -13,7 +13,7 @@ import {
     TouchableOpacity
 } from 'react-native';
 
-const Header = () => {
+const Header = ({navigation}) => {
 
     const [fontsLoaded] = useFonts({
         Poppins: require("../../../assets/fonts/Poppins-Medium.ttf"),
@@ -25,7 +25,7 @@ const Header = () => {
     return (
         <View style={s.container}>
             <View style={s.avatar}>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => navigation.navigate('User')}>
                     <Image 
                     source={require('../../../assets/header/avatar.jpg')}
                     resizeMode='cover'

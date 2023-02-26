@@ -7,9 +7,11 @@ const styles = StyleSheet.create({
         height: 80,
         paddingLeft: 20,
         display: 'flex',
+        flexWrap: 'wrap',
         flexDirection: 'row',
         justifyContent: 'flex-start',
         alignItems: 'center',
+        marginTop: 30,
     },
     option: {
         width: '13%',
