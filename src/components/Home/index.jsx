@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import {
     View,
     Text,
     ScrollView,
-    Image
+    Image,
+    Animated
 } from 'react-native';
 import s from './stylesheet';
 
@@ -14,16 +15,21 @@ import Options from '../Options';
 import Cards from '../Cards';
 
 
-const Home = () => {
+const Home = ({navigation}) => {
+    const movementX = useRef(new Animated.Value(100)).current;
+
+    useEffect(() => {
+        Animated.spring(movementX, { toValue: 0, useNativeDriver: true }).start();
+    }, [])
 
     return(
-        <ScrollView style={s.container}>
-            <Header/>
+        <Animated.ScrollView style={{...s.container, transform:[{translateX: movementX}]}}>
+            <Header navigation={navigation}/>
             <Balance/>
             <Options/>
             <LastTransactions/>
             <Cards/>
-        </ScrollView>
+        </Animated.ScrollView>
     )
 }
 

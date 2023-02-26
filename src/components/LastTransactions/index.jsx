@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import s from './stylesheet';
 
 //assets
@@ -10,24 +10,9 @@ import {
     View,
     Text,
     TouchableOpacity,
-    Image
 } from 'react-native';
 
-import example1 from '../../../assets/others/example1.jpg'
-import example2 from '../../../assets/others/example2.jpg'
-import example3 from '../../../assets/others/example3.jpg'
-import example4 from '../../../assets/others/example4.jpg'
-import example5 from '../../../assets/others/example5.jpg'
-import example6 from '../../../assets/header/avatar.jpg'
-
-const images = [
-    example1,
-    example2,
-    example3,
-    example4,
-    example5,
-    example6
-];
+import Movement from './Movement';
 
 const items = [
     {
@@ -113,6 +98,7 @@ const items2 = [
 ]
 
 const LastTransactions = () => {
+
     const [more, setMore] = useState(false);
 
     const [fontsLoaded] = useFonts({
@@ -143,53 +129,9 @@ const LastTransactions = () => {
             <View style={s.items}>
                 {
                     data.map((item, i) => (
-                        <TouchableOpacity style={s.items.card} key={i}>
-                            <View style={s.items.avatarcard}>
-                                <View style={{
-                                    justifyContent: 'center',
-                                    alignItems: 'center',
-                                    height: '100%',
-                                    width: '30%'
-                                }}>
-                                    <Image source={images[item.image-1]}
-                                        resizeMode='cover'
-                                        style={{
-                                            width: 50,
-                                            height: 50,
-                                            borderColor: 'rgba(0, 0, 0, 0.3)',
-                                            borderWidth: 2,
-                                            borderRadius: 50,
-                                        }}
-                                    />
-                                </View>
-                                <View style={{
-                                    width: '60%',
-                                }}>
-                                    <Text style={{
-                                        fontSize: 18,
-                                        fontFamily: 'Poppins',
-                                        color: palette.dark,
-                                    }}>{item.name}</Text>
-                                    <Text style={{
-                                        fontSize: 12,
-                                        fontFamily: 'PoppinsLight',
-                                        color: palette.dark,
-                                        opacity: 0.7
-                                    }}>{item.reason}</Text>
-                                </View>
-                            </View>
-                            <View style={{
-                                    justifyContent: "flex-end",
-                                    alignItems: "center",
-                                    width: '40%',
-                                }}>
-                                <Text style={{
-                                        fontSize: 18,
-                                        fontFamily: 'PoppinsSemiBold',
-                                        color: item.entrance ? palette.secondary : palette.dark,
-                                }}>{item.entrance ? `+ ${item.amount} $` : `- ${item.amount} $`}</Text>
-                            </View>
-                        </TouchableOpacity>
+                        <View key={i}>
+                            <Movement item={item} i={i}/>
+                        </View>
                     ))
                 }
             </View>
