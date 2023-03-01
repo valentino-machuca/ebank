@@ -1,4 +1,10 @@
 {
+    "welcome": {
+        "welcomeback": "Bienvenid@!",
+        "home": "Inicio",
+        "fingerprint": "Autenticación biometrica",
+        "cancel": "Cancelar"
+    },
     "header": {
         "hello": "Hola",
         "notifications": "Notificaciones"

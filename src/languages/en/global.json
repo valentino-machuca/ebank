@@ -1,4 +1,10 @@
 {
+    "welcome": {
+        "welcomeback": "Welcome!",
+        "home": "Home",
+        "fingerprint": "Fingerprint Authentication",
+        "cancel": "Cancel"
+    },
     "header": {
         "hello": "Hello",
         "notifications": "Notifications"
