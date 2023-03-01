@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Image, TouchableOpacity } from 'react-native';
+import { View } from 'react-native';
 
 //utilities
 import palette from '../../utilities/colors';
@@ -13,6 +13,7 @@ import Home from '../Home';
 import Info from '../Info';
 import Config from '../Config';
 import User from '../User';
+import Welcome from '../welcome';
 
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -73,7 +74,8 @@ const Auth = () => {
 
     return(
         <NavigationContainer>
-            <Stack.Navigator screenOptions={{headerShown: false}}>
+            <Stack.Navigator initialRouteName='Welcome' screenOptions={{headerShown: false}}>
+                <Stack.Screen name='Welcome' component={Welcome}/>
                 <Stack.Screen name='HomeScreen' component={Navigate}/>
                 <Stack.Screen name='User' component={User}/>
             </Stack.Navigator>

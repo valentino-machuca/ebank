@@ -1,9 +1,5 @@
 import React, { useEffect, useRef } from 'react'
 import {
-    View,
-    Text,
-    ScrollView,
-    Image,
     Animated
 } from 'react-native';
 import s from './stylesheet';
